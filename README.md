@@ -28,7 +28,7 @@ mysql = {
 
 - list dogs
 
-`curl --request GET 'localhost:8080/dogs/1'`
+`curl --request GET 'localhost:8080/dogs'`
 
 - create a new dog
 
