@@ -1,6 +1,6 @@
 # Get Started
 
-`git clone `
+`git clone https://github.com/yukihirai0505/dog_api`
 
 ##Edit application.conf
 
