@@ -4,6 +4,7 @@ import akka.stream.ActorMaterializer
 import dao.DogDao
 import model.Dog
 import http.DogRoutes
+import scala.io.StdIn
 
 import scala.concurrent.ExecutionContextExecutor
 
@@ -23,6 +24,11 @@ object Server extends App with DogRoutes with DogDao {
 			create(Dog("Bella"))
 			create(Dog("Lucy"))
 			create(Dog("Molly"))
-			Http().bindAndHandle(routes, "localhost", 8080)
+			val bindingFuture = Http().bindAndHandle(routes, "localhost", 8080)
+			println(s"Server online at http://localhost:8080/\nPress RETURN to stop...")
+			StdIn.readLine()
+			bindingFuture
+				.flatMap(_.unbind())
+				.onComplete(_ => system.terminate())
 	}
 }
