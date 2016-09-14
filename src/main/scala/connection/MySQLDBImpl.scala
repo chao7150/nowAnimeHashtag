@@ -2,7 +2,7 @@ package connection
 
 import slick.driver.MySQLDriver
 
-trait MySQLDBImpl extends DBComponent {
+trait MySQLDBImpl {
 
 	val driver = MySQLDriver
 

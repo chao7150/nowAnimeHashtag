@@ -1,10 +1,10 @@
 package model
 
-import connection.DBComponent
+import connection.MySQLDBImpl
 import spray.json.DefaultJsonProtocol
 
 trait DogTable extends DefaultJsonProtocol {
-	this: DBComponent =>
+	this: MySQLDBImpl =>
 
 	import driver.api._
 

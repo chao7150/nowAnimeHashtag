@@ -1,12 +1,12 @@
 package dao
 
-import connection.{MySQLDBImpl, DBComponent}
+import connection.MySQLDBImpl
 import model.{Dog, DogTable}
 
 import scala.concurrent.Future
 
 trait DogDao extends DogTable with MySQLDBImpl {
-	this: DBComponent =>
+	this: MySQLDBImpl =>
 
 	import driver.api._
 
