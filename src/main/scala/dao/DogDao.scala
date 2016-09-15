@@ -6,8 +6,6 @@ import model.{Dog, DogTable}
 import scala.concurrent.Future
 
 trait DogDao extends DogTable with MySQLDBImpl {
-	this: MySQLDBImpl =>
-
 	import driver.api._
 
 	protected val dogTableQuery = TableQuery[DogTable]
