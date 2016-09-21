@@ -1,3 +1,5 @@
+This software is released under the MIT License, see LICENSE.txt.
+
 # Get Started
 
 `git clone https://github.com/yukihirai0505/dog_api`
