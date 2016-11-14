@@ -4,18 +4,18 @@ import slick.driver.MySQLDriver
 
 trait MySQLDBImpl {
 
-	val driver = MySQLDriver
+  val driver = MySQLDriver
 
-	import driver.api._
+  import driver.api._
 
-	val db: Database = MySqlDB.connectionPool
+  val db: Database = MySqlDB.connectionPool
 
 }
 
 private[connection] object MySqlDB {
 
-	import slick.driver.MySQLDriver.api._
+  import slick.driver.MySQLDriver.api._
 
-	val connectionPool = Database.forConfig("mysql")
+  val connectionPool = Database.forConfig("mysql")
 
 }

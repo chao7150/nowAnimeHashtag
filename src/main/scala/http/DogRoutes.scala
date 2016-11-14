@@ -10,37 +10,37 @@ import model.Dog
 import scala.concurrent.ExecutionContextExecutor
 
 trait DogRoutes extends SprayJsonSupport {
-	this: DogDao =>
+  this: DogDao =>
 
-	implicit val dispatcher: ExecutionContextExecutor
+  implicit val dispatcher: ExecutionContextExecutor
 
-	val routes = pathPrefix("dogs") {
-		pathEnd {
-			get {
-				complete(getAll)
-			} ~ post {
-				entity(as[Dog]) { dog =>
-					complete {
-						create(dog).map { result => HttpResponse(entity = "dog has been saved successfully") }
-					}
-				}
-			}
-		} ~
-			path(IntNumber) { id =>
-				get {
-					complete(getById(id))
-				} ~ put {
-					entity(as[Dog]) { dog =>
-						complete {
-							val newDog = Dog(dog.name, Option(id))
-							update(newDog).map { result => HttpResponse(entity = "dog has been updated successfully") }
-						}
-					}
-				} ~ MethodDirectives.delete {
-					complete {
-						delete(id).map { result => HttpResponse(entity = "dog has been deleted successfully") }
-					}
-				}
-			}
-	}
+  val routes = pathPrefix("dogs") {
+    pathEnd {
+      get {
+        complete(getAll)
+      } ~ post {
+        entity(as[Dog]) { dog =>
+          complete {
+            create(dog).map { result => HttpResponse(entity = "dog has been saved successfully") }
+          }
+        }
+      }
+    } ~
+      path(IntNumber) { id =>
+        get {
+          complete(getById(id))
+        } ~ put {
+          entity(as[Dog]) { dog =>
+            complete {
+              val newDog = Dog(dog.name, Option(id))
+              update(newDog).map { result => HttpResponse(entity = "dog has been updated successfully") }
+            }
+          }
+        } ~ MethodDirectives.delete {
+          complete {
+            delete(id).map { result => HttpResponse(entity = "dog has been deleted successfully") }
+          }
+        }
+      }
+  }
 }

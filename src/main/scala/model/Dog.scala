@@ -4,20 +4,20 @@ import connection.MySQLDBImpl
 import spray.json.DefaultJsonProtocol
 
 trait DogTable extends DefaultJsonProtocol {
-	this: MySQLDBImpl =>
+  this: MySQLDBImpl =>
 
-	import driver.api._
+  import driver.api._
 
-	implicit lazy val dogFormat = jsonFormat2(Dog)
-	implicit lazy val dogListFormat = jsonFormat1(DogList)
+  implicit lazy val dogFormat = jsonFormat2(Dog)
+  implicit lazy val dogListFormat = jsonFormat1(DogList)
 
-	class DogTable(tag: Tag) extends Table[Dog](tag, "dog") {
-		val id = column[Int]("id", O.PrimaryKey, O.AutoInc)
-		val name = column[String]("name")
+  class DogTable(tag: Tag) extends Table[Dog](tag, "dog") {
+    val id = column[Int]("id", O.PrimaryKey, O.AutoInc)
+    val name = column[String]("name")
 
-		def * = (name, id.?) <>(Dog.tupled, Dog.unapply)
+    def * = (name, id.?) <>(Dog.tupled, Dog.unapply)
 
-	}
+  }
 
 }
 
