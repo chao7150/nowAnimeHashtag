@@ -4,7 +4,7 @@ This software is released under the MIT License, see LICENSE.txt.
 
 `git clone https://github.com/yukihirai0505/dog_api`
 
-##Edit application.conf
+## Edit application.conf
 
 Edit `src/main/resources/application.conf`
 
