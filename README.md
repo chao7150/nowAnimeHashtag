@@ -2,7 +2,7 @@ This software is released under the MIT License, see LICENSE.txt.
 
 # Get Started
 
-`git clone https://github.com/yukihirai0505/dog_api`
+`$ git clone https://github.com/yukihirai0505/dog_api`
 
 ## Edit application.conf
 
@@ -23,27 +23,27 @@ mysql = {
 
 ## Run App
 
-`sbt run`
+`$ sbt run`
 
 
 ## curlでテスト
 
 - list dogs
 
-`curl --request GET 'localhost:8080/dogs'`
+`$ curl --request GET 'localhost:8080/dogs'`
 
 - create a new dog
 
-`curl -H "Content-Type: application/json" --request POST 'localhost:8080/dogs'  -d '{"name":"NEW DOG"}'`
+`$ curl -H "Content-Type: application/json" --request POST 'localhost:8080/dogs'  -d '{"name":"NEW DOG"}'`
 
 - show the dog
 
-`curl --request GET 'localhost:8080/dogs/1'`
+`$ curl --request GET 'localhost:8080/dogs/1'`
 
 - update the dog
 
-`curl -H "Content-Type: application/json" --request PUT 'localhost:8080/dogs/1'  -d '{"name":"Updated DOG"}'`
+`$ curl -H "Content-Type: application/json" --request PUT 'localhost:8080/dogs/1'  -d '{"name":"Updated DOG"}'`
 
 - delete the dog
 
-`curl --request DELETE 'localhost:8080/dogs/1'`
+`$ curl --request DELETE 'localhost:8080/dogs/1'`
