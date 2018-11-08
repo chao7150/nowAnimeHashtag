@@ -10,3 +10,5 @@ services:
       MYSQL_PASSWORD: dog
     ports:
       - "13306:3306"
+    volumes:
+      - ./datastore:/etc/mysql/conf.d
