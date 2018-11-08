@@ -10,7 +10,7 @@ Edit `src/main/resources/application.conf`
 
 ```application.conf
 mysql = {
-  dataSourceClass="com.mysql.jdbc.jdbc2.optional.MysqlDataSource"
+  dataSourceClass="com.mysql.cj.jdbc.MysqlDataSource"
   properties {
     user="[ユーザー名]"
     password="[パスワード]"
