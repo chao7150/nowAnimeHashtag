@@ -1,0 +1,12 @@
+version: '2'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dog
+      MYSQL_USER: dog
+      MYSQL_PASSWORD: dog
+    ports:
+      - "13306:3306"

@@ -16,6 +16,7 @@ mysql = {
     password="[パスワード]"
     databaseName="[作成したDB名]"
     serverName="localhost"
+    portNumber="3306"
   }
   numThreads=10
 }
@@ -23,7 +24,10 @@ mysql = {
 
 ## Run App
 
-`$ sbt run`
+```
+$ docker-compose up -d --build # <= DockerでDBを用意する場合
+$ sbt run
+```
 
 
 ## curlでテスト
